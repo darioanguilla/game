@@ -27,7 +27,7 @@ export default class Board extends Component {
             key={index}
             value={this.props.squares[index]} 
             handleClick={() => this.props.handleClick(index)}
-            isWinning={this.props.winningSquares.includes(index)}
+            isWinner={this.props.winningSquares.includes(index)}
         />
     )
   }
