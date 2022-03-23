@@ -15,16 +15,20 @@ export default class Game extends Component {
 
     handleClick(i){
 		const squares = this.state.squares.slice();
+        //se c'è un vincitore si blocca
 		if (calculateWinner(squares) || squares[i]) {
 			return;
 		}
 		squares[i] = this.state.xIsNext ? 'X' : 'O';
-		this.setState({
+		this.setState(
+            {
 		squares: squares,
 		xIsNext: !this.state.xIsNext,
-		}, function () {
+		    }, 
+        function () {
 			console.log(this.state.squares)
-		});
+		    }
+        );
 	}
 
     render() {
